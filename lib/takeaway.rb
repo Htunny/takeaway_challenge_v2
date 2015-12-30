@@ -1,14 +1,13 @@
 class Takeaway
-
-  attr_reader :menu, :show_menu
-
-  def initialize
-    @menu = {Burger: 5, Fries: 3, Shake: 2.50 }
+  def initialize(menu:)
+    @menu = menu
   end
 
-  def show_menu
-    @menu.map do | dish, price |
-     "%s £%.2f" % [dish, price]
-   end.join(", ")
+  def print_menu
+    menu.print
   end
+
+  private
+
+  attr_reader :menu
 end
