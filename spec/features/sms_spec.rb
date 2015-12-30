@@ -7,8 +7,8 @@ describe SMS do
   let(:messages) { double(:messages) }
   let(:config) do
     {
-      account_sid: "AC0dc5de35f3b57841ad55af468655d657",
-      auth_token: "6afed1886328e8e6952294535a8aac0a",
+      account_sid: "AC7065cbcdbb0e6ee7c3cc826a5266fae6",
+      auth_token: "881c7342ab75ff58ebfe692d8499353f",
       from: "+441445295013",
       to: "+447921723500",
       body: "Thank you! Your order will be delivered before %s"
