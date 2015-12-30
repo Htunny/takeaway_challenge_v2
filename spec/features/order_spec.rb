@@ -16,14 +16,13 @@ describe Order do
   before do
     allow(menu).to receive(:has_dish?).with(:burger).and_return(true)
     allow(menu).to receive(:has_dish?).with(:fries).and_return(true)
-    
+
     allow(menu).to receive(:price).with(:burger).and_return(5.00)
     allow(menu).to receive(:price).with(:fries).and_return(3.00)
   end
 
   it 'selects several dishes from the menu' do
-    order.add(:burger, 2)
-    order.add(:fries, 1)
+    create_order
     expect(order.dishes).to eq(dishes)
   end
 
@@ -37,5 +36,10 @@ describe Order do
    order.add(:fries, 1)
    total = 13.00
    expect(order.total).to eq(total)
+ end
+
+ def create_order
+   order.add(:burger, 2)
+   order.add(:fries, 1)
  end
 end
