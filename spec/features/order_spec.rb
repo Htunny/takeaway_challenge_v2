@@ -25,7 +25,7 @@ describe Order do
 
   it 'does not allow items that are not on the menu to be added' do
     allow(menu).to receive(:has_dish?).with(:fish).and_return(false)
-    expect { order.add(:fish, 1) }.to raise_error "Fish is not on the menu - Go somewhere else!"
+    expect { order.add(:fish, 1) }.to raise_error NoItemError, "Fish is not on the menu - Go somewhere else!"
   end
 
 end
